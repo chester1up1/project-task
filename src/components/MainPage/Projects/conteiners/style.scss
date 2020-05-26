@@ -1,0 +1,80 @@
+.project {
+  width: 100%;
+  border-radius: 25px;
+  box-shadow: 0px 5px 5px 0px rgba(66, 66, 66, 0.22);
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  margin-bottom: 10px;
+  .left {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    .top {
+      width: 100%;
+      font-weight: bold;
+      color: white;
+      font-size: x-large;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      p {
+        margin-bottom: 0px;
+      }
+    }
+    .bot {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      position: relative;
+      .admin {
+        // width: 50%;
+
+        p {
+          color: white;
+          // font-size: larger;
+          font-weight: bold;
+          margin-right: 20px;
+        }
+      }
+      .users {
+        width: 20%;
+        white-space: nowrap;
+        p {
+          color: white;
+          // font-size: large;
+        }
+      }
+    }
+  }
+  .right {
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    .days {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      // background-color: rgba(red, 0.397);
+      width: 70px;
+      height: 70px;
+      border-radius: 90px;
+      p {
+        color: white;
+        font-size: x-large;
+        font-weight: bold;
+        margin-bottom: 0px;
+      }
+    }
+  }
+}

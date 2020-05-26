@@ -1,0 +1,147 @@
+.task_in_process {
+  background-color: yellow;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 75px;
+  border-radius: 15px;
+  margin-bottom: 10px;
+  p {
+    margin-bottom: 0px;
+  }
+  .left {
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    background-color: #eb346e;
+    height: 100%;
+    width: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    p {
+      transform: rotate(270deg);
+      color: white;
+      font-weight: bold;
+    }
+  }
+  .center_admin {
+    padding: 5px 0px 5px 0px;
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 5%;
+    p {
+      color: white;
+      font-size: 15px;
+      font-weight: bolder;
+    }
+  }
+  .center {
+    padding: 5px 0px 5px 0px;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+    margin-left: 5%;
+    .name {
+      color: white;
+      font-size: 15px;
+      font-weight: bolder;
+      padding-bottom: 10px;
+    }
+    .responsible {
+      position: absolute;
+      white-space: nowrap;
+      color: white;
+      bottom: 0;
+      font-size: 13px;
+    }
+  }
+  .right {
+    position: relative;
+
+    height: 100%;
+    .trash {
+      position: absolute;
+      top: 0px;
+      right: 7px;
+    }
+    img {
+      width: 15px;
+    }
+    width: 25%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    .take {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      background-color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 90px;
+      p {
+        font-size: larger;
+        font-weight: bold;
+        color: #89eb34;
+      }
+    }
+  }
+  .right_admin {
+    position: relative;
+    .trash {
+      position: absolute;
+      top: 0px;
+      right: 7px;
+    }
+    img {
+      width: 15px;
+    }
+    padding-right: 2px;
+    width: 50%;
+    height: 100%;
+    padding: 5px 0px 5px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    .completed {
+      background-color: #89eb34;
+      height: 30px;
+      width: 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-radius: 5px;
+      p {
+        font-weight: bold;
+        color: white;
+      }
+    }
+    .failed {
+      background-color: #eb346e;
+      height: 30px;
+      width: 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-radius: 5px;
+      p {
+        font-weight: bold;
+        color: white;
+      }
+    }
+  }
+}

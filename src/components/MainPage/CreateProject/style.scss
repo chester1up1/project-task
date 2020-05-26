@@ -1,0 +1,69 @@
+.create_project {
+  position: absolute;
+  width: 100%;
+  height: 87vh;
+  padding: 10px;
+  position: relative;
+  .logout {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+  }
+  .box {
+    margin-top: 20%;
+    background-color: white;
+    border-radius: 15px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .color {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      justify-content: flex-end;
+    }
+    .name {
+      width: 100%;
+      font-size: 25px;
+      font-weight: bold;
+      input {
+        transition: 0.25s;
+        height: 60px;
+        font-size: 23px;
+      }
+      input:focus {
+        // border-color: inherit;
+        border-width: 2px;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        outline: none;
+      }
+    }
+    .create {
+      width: 100%;
+      margin-top: 30px;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      .btn {
+        color: white;
+        font-weight: bold;
+        font-size: 21px;
+        border-radius: 10px;
+      }
+    }
+    .bot {
+      margin-top: 50px;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      p {
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+    }
+  }
+}
