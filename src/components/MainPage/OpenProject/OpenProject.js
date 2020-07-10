@@ -1,4 +1,4 @@
-import React, { Component, useEffect } from "react";
+import React, { Component, useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { GetAllProjects } from "../Projects/actions";
 import { Spinner } from "reactstrap";
@@ -7,12 +7,16 @@ import Project from "./Project";
 
 export const OpenProject = (props) => {
   const { projects, GetAllProjects, load } = props;
+  const [load_, setload] = useState(false);
   console.log(props.match.params);
   console.log(projects, load);
   useEffect(() => {
     if (projects.length == 0) {
       GetAllProjects(props.match.params.name);
     }
+    setTimeout(() => {
+      setload(true);
+    }, 2000);
     console.log("projects");
   }, []);
   const even = (item) =>

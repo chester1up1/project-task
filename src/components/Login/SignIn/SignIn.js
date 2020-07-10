@@ -12,7 +12,9 @@ export const SignIn = (props) => {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    setError("all");
+    if (login_error) {
+      setError("all");
+    }
   }, [login_error]);
   const onChangeEmail = (e) => {
     setEmail(e.target.value);

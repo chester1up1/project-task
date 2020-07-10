@@ -34,9 +34,13 @@ export const DefaultRouter = (props) => {
           </div>
         ) : (
           <span>
+            <Route exact path="/" component={StartPage} />
             <Route path="/signin" component={SignIn} />
             <Route path="/signup" component={SignUp} />
-            <Route path="/" component={StartPage} />
+            <Route path="/create-project" component={StartPage} />
+            <Route path="/projects" component={StartPage} />
+            <Route path="/projects/:name/:key" component={StartPage} />
+            <Route path="/connect" component={StartPage} />
           </span>
         )
       ) : (

@@ -9,8 +9,12 @@ import times_solid from "../../../img/times_solid.svg";
 import { DeleteProjects, AddTask } from "./actions";
 import { Button, Modal, ModalBody, Input } from "reactstrap";
 import Task from "./Tasks/Task";
-
+import { Tooltip } from "reactstrap";
 export const Project = (props) => {
+  const [tooltipOpen, setTooltipOpen] = useState(false);
+
+  const toggle4 = () => setTooltipOpen(!tooltipOpen);
+  useEffect(() => {}, []);
   const {
     name,
     admin,
@@ -85,10 +89,24 @@ export const Project = (props) => {
             </p>
             <p className="text " onClick={() => Coppy()}>
               key:
-              <sapn className="span key" style={{ color: color }}>
+              <sapn
+                className="span key"
+                style={{ color: color }}
+                id="TooltipExample"
+                onClick={toggle4}
+              >
                 {" " + key_}
               </sapn>
             </p>
+            <Tooltip
+              placement="top"
+              isOpen={tooltipOpen}
+              target="TooltipExample"
+              toggle={toggle4}
+            >
+              {" "}
+              click to copy
+            </Tooltip>
           </div>
           <div className="right">
             <div
