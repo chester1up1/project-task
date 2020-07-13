@@ -114,3 +114,18 @@ export const ComplitedTask = (id, tasks, name) => {
     } catch (error) {}
   };
 };
+export const ExitProject = (id, users, name) => {
+  return async (dispatch) => {
+    let new_data = users.filter((item) => item !== name);
+    try {
+      let projRef = database.collection("projects").doc(id);
+      let updateSingle = projRef.update({
+        users: new_data,
+      });
+      dispatch({
+        type: "EXIT_PROJECT",
+        data: { result: new_data, id: id },
+      });
+    } catch (error) {}
+  };
+};

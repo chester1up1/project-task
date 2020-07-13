@@ -1,0 +1,121 @@
+.main_all {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+
+  .version_mobile {
+    z-index: 103;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+
+    background-color: #88afcb;
+    border-radius: 10px;
+    height: 40px;
+    width: 100px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 5px;
+    .v_item {
+      width: 38px;
+      height: 38px;
+      border-radius: 90px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+    }
+    img {
+      cursor: pointer;
+    }
+    img:active {
+      opacity: 0.5;
+    }
+  }
+  .version_desktop {
+    z-index: 103;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+
+    background-color: #88afcb;
+    border-radius: 10px;
+    height: 40px;
+    width: 100px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 5px;
+    .v_item {
+      width: 38px;
+      height: 38px;
+      border-radius: 90px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+    }
+    img {
+      cursor: pointer;
+    }
+    img:active {
+      opacity: 0.5;
+    }
+  }
+  z-index: 100;
+  .desktop {
+    width: 100%;
+    background-color: white;
+    height: 100%;
+  }
+
+  .mobile {
+    width: 375px;
+    height: 667px;
+    background-color: white;
+    overflow: hidden;
+    // padding-right: 2px;
+    margin-right: 2.5px;
+  }
+}
+
+.color_bg {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(0.1turn, #88afcb, #dce6ee);
+  position: absolute;
+  top: 0;
+  z-index: 99;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  img {
+    // width: 375px;
+    // height: 667px;
+    z-index: 155;
+  }
+}
+._bg {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 500px;
+  }
+}

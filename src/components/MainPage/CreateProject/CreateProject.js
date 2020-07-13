@@ -72,6 +72,9 @@ export const CreateProject = (props) => {
   };
   return (
     <div className="create_project" style={{ backgroundColor: color }}>
+      <div className="hello">
+        <p>Hello:{" " + admin}</p>
+      </div>
       <div className="box">
         <div className="color">
           {allColors.map((item) => (

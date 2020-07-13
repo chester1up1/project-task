@@ -6,10 +6,10 @@ import ConnectToProject from "../ConnectToProject/ConnectToProject";
 import { Switch, Route } from "react-router";
 import Navbar from "../Navbar/Navbar";
 import OpenProject from "../OpenProject/OpenProject";
-
+import "./style.scss";
 export const MainRouter = () => {
   return (
-    <div>
+    <div className="main_switch">
       <Navbar />
       <Switch>
         <Route exact path="/create-project" component={CreateProject} />

@@ -32,7 +32,7 @@ export const Pending = (props) => {
       </div>
       <div className="right">
         <div className="take" onClick={Take}>
-          <p>Take</p>
+          <p className="take_p">Take</p>
         </div>
         {author == user || admin == user ? (
           <div className="trash" onClick={Delete}>

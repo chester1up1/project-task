@@ -1,17 +1,34 @@
 .create_project {
   // position: absolute;
   width: 100%;
-  height: 87vh;
-  padding: 10px;
+  height: 100%;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  padding-top: 13vh;
   position: relative;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  .hello {
+    // background-color: springgreen;
+    position: absolute;
+    top: 13vh;
+    width: 100%;
+    left: 10px;
+    p {
+      margin-bottom: 0px;
+      font-size: x-large;
+      color: white;
+      font-weight: bold;
+    }
+  }
   .logout {
     position: absolute;
     bottom: 20px;
     right: 20px;
+    cursor: pointer;
   }
   .box {
     // margin-top: 20%;
@@ -27,7 +44,11 @@
       display: flex;
       flex-direction: row;
       width: 100%;
+      // height: 100%;
       justify-content: flex-end;
+      div {
+        cursor: pointer;
+      }
     }
     .name {
       width: 100%;

@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 export const Navbar = () => {
   return (
-    <div className="navbar">
+    <div className="navbar_">
       <div className="icon">
         <Link to="/projects">
           <img src={tasks_solid} alt="" />

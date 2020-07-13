@@ -6,7 +6,8 @@ import "./style.scss";
 import users_solid from "../../../img/users_solid.svg";
 import trash_alt_solid from "../../../img/trash_alt_solid.svg";
 import times_solid from "../../../img/times_solid.svg";
-import { DeleteProjects, AddTask } from "./actions";
+import exit from "../../../img/exit.svg";
+import { DeleteProjects, AddTask, ExitProject } from "./actions";
 import { Button, Modal, ModalBody, Input } from "reactstrap";
 import Task from "./Tasks/Task";
 import { Tooltip } from "reactstrap";
@@ -28,21 +29,33 @@ export const Project = (props) => {
     AddTask,
     tasks,
     me,
+    ExitProject,
   } = props;
   const [modal, setModal] = useState(false);
+  const [modal_exit, setModal_exit] = useState(false);
   const [panel, setPanle] = useState(false);
   const [add, setAdd] = useState(false);
+  const [add2, setAdd2] = useState(false);
   const [nameTask, setNameTask] = useState("");
   const [error, setError] = useState(false);
   const toggle = () => setModal(!modal);
+  const toggle_exit = () => setModal_exit(!modal_exit);
   const toggle2 = () => setPanle(!panel);
-  const toggle3 = () => setAdd(true);
+  const toggle3 = () => {
+    setAdd(true);
+    setAdd2(true);
+  };
   const toggle3False = () => setAdd(false);
   let date1 = new Date(deadline);
   let date2 = new Date(date_create);
   let days_left = Math.ceil(
     (date1.getTime() - date2.getTime()) / (1000 * 3600 * 24)
   );
+  const changeAdd = () => {
+    setTimeout(() => {
+      setAdd2(false);
+    }, 500);
+  };
   const Coppy = () => {
     navigator.clipboard.writeText(key_).then(() => {});
   };
@@ -109,13 +122,23 @@ export const Project = (props) => {
             </Tooltip>
           </div>
           <div className="right">
-            <div
-              className="delete"
-              style={{ backgroundColor: color }}
-              onClick={toggle}
-            >
-              <img src={trash_alt_solid} alt="trash" />
-            </div>
+            {admin == me ? (
+              <div
+                className="delete"
+                style={{ backgroundColor: color }}
+                onClick={toggle}
+              >
+                <img src={trash_alt_solid} alt="trash" />
+              </div>
+            ) : (
+              <div
+                className="delete"
+                style={{ backgroundColor: color }}
+                onClick={toggle_exit}
+              >
+                <img src={exit} alt="exit" />
+              </div>
+            )}
 
             <div
               className="users"
@@ -139,11 +162,12 @@ export const Project = (props) => {
               author={item.author}
             />
           ))}{" "}
+          <div className="pad" />
         </div>
         <div className="add_task">
           <div className="add_btn_box">
             <div
-              className="add_btn"
+              className="add_btn_"
               onClick={() => {
                 toggle3();
                 CreateNewTask();
@@ -152,20 +176,29 @@ export const Project = (props) => {
               <p>+</p>
             </div>
           </div>
-          <div className="add_input" style={{ width: add ? "80%" : "0px" }}>
+          <div
+            className="add_input"
+            style={{ width: add ? "95%" : "0px", opacity: add ? 1 : 0 }}
+          >
             <Input
               placeholder="task name"
-              style={{ display: add ? "flex" : "none" }}
+              style={{ display: add2 ? "flex" : "none" }}
               onChange={changeName}
               value={nameTask}
               invalid={error}
               maxLength={55}
             />
-            <div className="close" onClick={toggle3False}>
+            <div
+              className="close"
+              onClick={() => {
+                toggle3False();
+                changeAdd();
+              }}
+            >
               <img
                 src={times_solid}
                 alt="x"
-                style={{ width: add ? "20px" : "0px" }}
+                style={{ width: add ? "20px" : "0px", opacity: add ? 1 : 0 }}
               />
             </div>
           </div>
@@ -193,6 +226,28 @@ export const Project = (props) => {
           </Button>
         </ModalBody>
       </Modal>
+      <Modal isOpen={modal_exit} toggle={toggle_exit} className="modal_delete">
+        <ModalBody>
+          <p style={{ fontSize: "larger", fontWeight: "bold" }}>
+            You try to leave the projet
+          </p>
+          <Link to="/projects">
+            <Button
+              color="primary"
+              onClick={() => {
+                ExitProject(key_, users, me);
+                toggle_exit();
+              }}
+            >
+              Yes
+            </Button>{" "}
+          </Link>
+
+          <Button color="secondary" onClick={toggle_exit}>
+            Cancel
+          </Button>
+        </ModalBody>
+      </Modal>
       <div
         id="mySidepanel"
         class="sidepanel"
@@ -212,6 +267,6 @@ const mapStateToProps = (state) => ({
   me: state.user.email,
 });
 
-const mapDispatchToProps = { DeleteProjects, AddTask };
+const mapDispatchToProps = { DeleteProjects, AddTask, ExitProject };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Project);

@@ -22,7 +22,7 @@ export const OpenProject = (props) => {
   const even = (item) =>
     item.key == `${props.match.params.name}#${props.match.params.key}`;
   return (
-    <div>
+    <div style={{ width: "100%", height: "100%" }}>
       {!load ? (
         <div
           style={{
