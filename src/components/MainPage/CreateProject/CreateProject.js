@@ -76,20 +76,29 @@ export const CreateProject = (props) => {
         <p>Hello:{" " + admin}</p>
       </div>
       <div className="box">
-        <div className="color">
-          {allColors.map((item) => (
-            <div
-              onClick={() => changeColor(item)}
-              style={{
-                width: 20,
-                height: 20,
-                backgroundColor: item,
-                margin: 5,
-                borderRadius: 90,
-              }}
-            ></div>
-          ))}
+        <div className="top">
+          <div className="date">
+            <p style={{ color: color, marginLeft: 7 }}>Deadline:</p>
+            <div style={{ marginLeft: 7 }}>
+              <DatePicker selected={date} onChange={changeDate} />
+            </div>
+          </div>
+          <div className="color">
+            {allColors.map((item) => (
+              <div
+                onClick={() => changeColor(item)}
+                style={{
+                  width: 20,
+                  height: 20,
+                  backgroundColor: item,
+                  margin: 5,
+                  borderRadius: 90,
+                }}
+              ></div>
+            ))}
+          </div>
         </div>
+
         <div className="name">
           <p style={{ color: color }}> Enter project name:</p>
           <Input
@@ -103,12 +112,6 @@ export const CreateProject = (props) => {
           />
         </div>
         <div className="bot">
-          <div className="date">
-            <p style={{ color: color, marginLeft: 7 }}>Deadline:</p>
-            <div style={{ marginLeft: 7 }}>
-              <DatePicker selected={date} onChange={changeDate} />
-            </div>
-          </div>
           <div className="create">
             <Link to={path}>
               <Button

@@ -8,8 +8,6 @@ import Project from "./Project";
 export const OpenProject = (props) => {
   const { projects, GetAllProjects, load } = props;
   const [load_, setload] = useState(false);
-  console.log(props.match.params);
-  console.log(projects, load);
   useEffect(() => {
     if (projects.length == 0) {
       GetAllProjects(props.match.params.name);
@@ -17,7 +15,6 @@ export const OpenProject = (props) => {
     setTimeout(() => {
       setload(true);
     }, 2000);
-    console.log("projects");
   }, []);
   const even = (item) =>
     item.key == `${props.match.params.name}#${props.match.params.key}`;

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Provider } from "react-redux";
 import store from "./store";
 import { BrowserRouter } from "react-router-dom";
@@ -10,9 +10,27 @@ import desktop from "./img/desktop.svg";
 import "./style.scss";
 function App() {
   const [version, setversion] = useState("mobile");
+  const [version_disp, setDisp] = useState("");
+  const [widthWindow, setWidthWindow] = useState(0);
+
+  useEffect(() => {
+    const displayWindowSize = (e) => {
+      setWidthWindow(document.documentElement.clientWidth);
+    };
+    window.addEventListener("resize", displayWindowSize);
+    if (widthWindow < 1280) {
+      setDisp("none");
+      setversion("desktop");
+    } else {
+      setDisp("");
+    }
+    return () => window.removeEventListener("resize", displayWindowSize);
+  }, [widthWindow]);
+
   const changeVersion = (version) => {
     setversion(version);
   };
+
   return (
     <Provider store={store}>
       <BrowserRouter>
@@ -23,7 +41,10 @@ function App() {
           >
             <img src={mob_frame} alt="" />
           </div>
-          <div className={`version_${version}`}>
+          <div
+            className={`version_${version}`}
+            style={{ display: version_disp }}
+          >
             <div
               className="v_item"
               style={{

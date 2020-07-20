@@ -6,7 +6,6 @@ import Completed from "./components/Completed";
 
 export const Task = (props) => {
   const { name, status, user, color, id_, tasks, admin, author } = props;
-  console.log("name, status", name, status);
   return (
     <div>
       {status == "pending" ? (

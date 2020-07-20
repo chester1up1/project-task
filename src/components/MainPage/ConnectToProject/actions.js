@@ -20,7 +20,6 @@ export const Connect = (key_, me) => {
                 let projRef = database
                   .collection("projects")
                   .doc(project[0].key);
-                console.log("project[0].key", project[0].key);
                 projRef.update({
                   users: [...project[0].users, me],
                   users_count: project[0].users_count + 1,
@@ -28,29 +27,23 @@ export const Connect = (key_, me) => {
                 dispatch({ type: "CONNECT", data: true });
               }
               if (project[0].users.some(even)) {
-                console.log("kkkk");
                 let projRef = database
                   .collection("projects")
                   .doc(project[0].key);
-                console.log("project[0].key", project[0].key);
                 projRef.update({
                   users: [...project[0].users, me],
                   users_count: project[0].users_count + 1,
                 });
                 dispatch({ type: "CONNECT", data: true });
               } else {
-                console.log("ddddd");
               }
             } else {
               dispatch({ type: "CONNECT", data: true });
             }
           }
-          console.log("project", project);
           return project;
         })
-        .catch((error) => {
-          console.log("Помилка: ", error);
-        });
+        .catch((error) => {});
     } catch (error) {}
   };
 };

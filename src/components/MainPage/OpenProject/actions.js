@@ -37,7 +37,7 @@ export const AddTask = (id, name_task, me) => {
           });
         })
         .catch((error) => {
-          console.log("Помилка: ", error);
+          console.log("error: ", error);
         });
     } catch (error) {
       console.log("error", error);

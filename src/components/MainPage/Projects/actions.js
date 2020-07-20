@@ -25,7 +25,7 @@ export const GetAllProjects = (me) => {
         return projects;
       })
       .catch((error) => {
-        console.log("Помилка: ", error);
+        console.log("error: ", error);
       });
   };
 };

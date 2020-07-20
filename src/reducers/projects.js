@@ -32,7 +32,6 @@ const projects = (state = defaultState, action) => {
         ),
       };
     case "TAKE_TASK":
-      console.log(action.data.result);
       return {
         ...state,
         load: true,

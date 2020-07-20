@@ -10,7 +10,7 @@ export const GetUser = () => {
         }
       });
     } catch (error) {
-      console.log("error-->", error);
+      console.log("error", error);
     }
   };
 };
