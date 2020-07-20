@@ -11,19 +11,22 @@ import "./style.scss";
 function App() {
   const [version, setversion] = useState("mobile");
   const [version_disp, setDisp] = useState("");
-  const [widthWindow, setWidthWindow] = useState(1280);
+  const [widthWindow, setWidthWindow] = useState(
+    document.documentElement.clientWidth
+  );
 
   useEffect(() => {
-    const displayWindowSize = (e) => {
-      setWidthWindow(document.documentElement.clientWidth);
-    };
-    window.addEventListener("resize", displayWindowSize);
-    if (widthWindow < 1280) {
+    if (document.documentElement.clientWidth < 1280) {
       setDisp("none");
       setversion("desktop");
     } else {
       setDisp("");
     }
+    const displayWindowSize = (e) => {
+      setWidthWindow(document.documentElement.clientWidth);
+    };
+    window.addEventListener("resize", displayWindowSize);
+
     return () => window.removeEventListener("resize", displayWindowSize);
   }, [widthWindow]);
 
