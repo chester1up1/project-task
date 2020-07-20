@@ -11,7 +11,7 @@ import "./style.scss";
 function App() {
   const [version, setversion] = useState("mobile");
   const [version_disp, setDisp] = useState("");
-  const [widthWindow, setWidthWindow] = useState(0);
+  const [widthWindow, setWidthWindow] = useState(1280);
 
   useEffect(() => {
     const displayWindowSize = (e) => {
