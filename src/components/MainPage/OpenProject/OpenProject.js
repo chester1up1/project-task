@@ -69,21 +69,6 @@ export const OpenProject = (props) => {
     </div>
   );
 };
-// //(
-//         {/* projects.some(even) ? (
-//           <Project
-//             name={item.name}
-//             admin={item.admin}
-//             key={item.key}
-//             count_users={item.count_users}
-//             color={item.color}
-//             deadline={item.deadline}
-//             date_create={item.date_create}
-//           />
-//         ) : (
-//           <Not_found />
-//         ) */}
-//         )
 const mapStateToProps = (state) => ({
   projects: state.projects.items,
   load: state.projects.load,

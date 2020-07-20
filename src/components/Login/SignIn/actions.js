@@ -10,7 +10,6 @@ export const SignInFirebase = (email, password) => {
         dispatch({ type: "LOGIN", data: true });
         var errorCode = error.code;
         var errorMessage = error.message;
-        // ...
       });
   };
 };

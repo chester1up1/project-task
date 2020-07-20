@@ -75,11 +75,7 @@ export const Project = (props) => {
     setError(false);
   };
   return (
-    <div
-      className="open_project"
-      style={{ backgroundColor: color }}
-      // onClick={toggle3False}
-    >
+    <div className="open_project" style={{ backgroundColor: color }}>
       <div className="back">
         <Link to="/projects">
           <img src={arrow_left_solid} alt="back" />

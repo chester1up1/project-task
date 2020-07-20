@@ -54,10 +54,7 @@ function App() {
             <DefaultRouter />
           </div>
         </div>
-
-        <div className="color_bg">
-          {/* <img src={mobile_frame} alt="" /> */}
-        </div>
+        <div className="color_bg" />
       </BrowserRouter>
     </Provider>
   );

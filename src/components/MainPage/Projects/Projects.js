@@ -13,28 +13,6 @@ export const Projects = (props) => {
   }, []);
 
   return (
-    // <div className="projects">
-    //   {projects && projects.length > 0 ? (
-    //     projects.map((item, index) => (
-    //       <Link
-    //         to={`/projects/${item.admin}/${item.default_key}`}
-    //         style={{ textDecoration: "none" }}
-    //       >
-    //         <Project
-    //           key={index}
-    //           name={item.name}
-    //           admin={item.admin}
-    //           users_count={item.users_count}
-    //           color={item.color}
-    //           deadline={new Date(item.deadline)}
-    //           date_create={new Date(item.date_create)}
-    //         />
-    //       </Link>
-    //     ))
-    //   ) : (
-    //     <Guide />
-    //   )}
-    // </div>
     <div className="projects">
       {load ? (
         projects && projects.length > 0 ? (
@@ -62,7 +40,6 @@ export const Projects = (props) => {
           style={{
             width: "100%",
             height: "90%",
-            // backgroundColor: "red",
             display: "flex",
             flexDirection: "row",
             alignItems: "center",

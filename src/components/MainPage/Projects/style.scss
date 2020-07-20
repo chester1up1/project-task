@@ -14,7 +14,6 @@
   background: rgba(255, 255, 255, 0);
 }
 .guide {
-  // background-color: royalblue;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -46,15 +45,12 @@
       }
     }
     .guide_img {
-      // background-color: yellow;
       height: 100%;
-
       div {
         background: linear-gradient(25deg, #a22dee, #4468c7);
         height: 80.68px;
         width: 80.68px;
         border-radius: 90px;
-        // cursor: pointer;
       }
     }
   }

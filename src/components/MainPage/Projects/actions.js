@@ -21,7 +21,6 @@ export const GetAllProjects = (me) => {
             }
           }
         });
-        // console.log("er", lessons);
         dispatch({ type: "GET_ALL_PROJECTS", data: projects });
         return projects;
       })
@@ -30,7 +29,3 @@ export const GetAllProjects = (me) => {
       });
   };
 };
-
-// export const GetLessonsFirebase = () => {
-
-// }
